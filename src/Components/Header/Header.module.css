@@ -1,5 +1,15 @@
- .header_logo img{
- 	width: 20px;
- 	height: 20px;
+.header{
+	width: 100%;
+	position: absolute;
+	height: 30px;
+	background: #268dce;
+	top: 10px;
+	border-top-left-radius: 100px;
+	border-bottom-right-radius: 100px;
 }
-
+.header__row{
+	max-width: 1600px;
+	padding: 0 50px;
+	display: flex;
+	justify-content: space-between;
+}
