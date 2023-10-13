@@ -1,11 +1,12 @@
 .header{
 	width: 100%;
-	position: absolute;
+	/* position: absolute; */
 	height: 30px;
 	background: #268dce;
 	top: 10px;
 	border-top-left-radius: 100px;
 	border-bottom-right-radius: 100px;
+	opacity: 0.9;
 }
 .header__row{
 	max-width: 1600px;

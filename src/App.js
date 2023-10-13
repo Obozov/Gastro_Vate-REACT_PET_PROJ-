@@ -9,16 +9,18 @@ import Rev_Sup from './Components/Main/rev/reviews';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-function App() {
+function App(props) {
+
+
+
 	return (
 		<BrowserRouter>
 			<div className="App">
 				<Header />
-
 				<div className='app-wrapper-content'>
 					<Routes>
 						<Route path='/map' element={<Map />} />
-						<Route path='/list' element={<List />} />
+						<Route path='/list/*' element={<List restaurantsData={props.restaurantsData}  />} />
 						<Route path='/about' element={<About />} />
 						<Route path='/rev_sup' element={<Rev_Sup />} />
 					</Routes>

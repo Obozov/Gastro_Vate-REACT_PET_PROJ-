@@ -1,9 +1,24 @@
+import c from "./list.module.css"
+import Restaurant from "./restaurant/restaurant";
 
-const List = () => {
+
+
+
+const List = (props) => {
+
+
+
+
+
+
+
+
+
+
 	return (
-		<div>
-			
-		</div>
+		<main className="list" >
+			<Restaurant restaurantsData={props.restaurantsData} />
+		</main>
 	)
 }
 

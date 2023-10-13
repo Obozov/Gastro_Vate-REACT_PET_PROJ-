@@ -1,0 +1,9 @@
+.restaurant{
+	color: black;
+	font-size: 30px;
+	border: 1px black solid;
+}
+.name{
+	font-weight: bold;
+	font-size: 30px;
+}
