@@ -14,3 +14,17 @@
 	display: flex;
 	justify-content: space-between;
 }
+.hotBlock{
+	border: 1px solid black;
+}
+.hotOffer{
+	color:red;
+
+}
+.hotBlock:hover{
+	transform: scale(1.1);
+}
+.hotOffer span{
+	color:rgb(172, 234, 15);
+
+}

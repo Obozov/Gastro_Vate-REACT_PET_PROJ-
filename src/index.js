@@ -3,24 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import state from './redux/state';
 
 
-// imitation backend
-let restaurantsData = [
-	{ id: 1, name: "Clode Mone", status: false, time: 10, foto: "url" },
-	{ id: 2, name: "Gendelyk", status: true, time: 0, foto: "url" },
-	{ id: 3, name: "PatoPizza", status: false, time: 30, foto: "url" },
-	{ id: 4, name: "FriluaRes", status: false, time: 50, foto: "url" },
-	{ id: 5, name: "Salva do Rali", status: true, time: 0, foto: "url" },
-
-]
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App restaurantsData={restaurantsData} />
+    <App state={state} />
   </React.StrictMode>
 );
 

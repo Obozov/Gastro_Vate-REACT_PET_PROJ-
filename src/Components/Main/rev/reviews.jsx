@@ -1,5 +1,5 @@
 
-const Rev_Sup = () => {
+const RevSup = () => {
 	return (
 		<div >
 			
@@ -8,4 +8,4 @@ const Rev_Sup = () => {
 }
 
 
-export default Rev_Sup;
+export default RevSup;

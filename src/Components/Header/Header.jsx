@@ -1,15 +1,23 @@
 import h from './Header.module.css';
 import Burger from './burger/burger';
+import Hot from './hot/hot';
 
-const Header = () => {
+const Header = (props) => {
+
+
+	
 	return (
 		<div className={h.header}>
 			<div className={h.header__row}>
 				<div className={h.header_logo}>
-					{/* <img src="../../logo.jpg" alt=""></img> */}
-					logo
+
+
 				</div>
-				<Burger/>
+
+				<Hot hotRestaurant={props.hotRestaurant} />
+
+				<Burger />
+
 			</div>
 		</div>
 	)
