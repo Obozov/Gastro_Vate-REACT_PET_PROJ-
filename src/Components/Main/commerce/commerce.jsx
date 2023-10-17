@@ -3,25 +3,28 @@ import c from './commerce.module.css'
 
 
 
-const Commerce = () => {
+const Commerce = (props) => {
 
-	let newRestaurantElement = React.createRef();
+	let newRestElement = React.createRef();
 
-	let addRestaurant = () => {
-		let text = newRestaurantElement.current.value;
-		alert(text);
+	let addRest = () => {
+		let text = newRestElement.current.value;
+		props.addRestaurant(text);
 	}
 
+	let onRestChange = () => {
+
+	}
 
 	return <div className={c.commerce}>
 		<h1 className={c.title}>For Commerce</h1>
 		<div className={c.addrestaurant}>
 
 			<p>Enter your name</p>
-			<textarea ref={newRestaurantElement}></textarea>
+			<textarea onChange={onRestChange} ref={newRestElement} value={props.newRestText} />
 
 
-			<button onClick={addRestaurant} className={c.btn}>add your restaurant</button>
+			<button onClick={addRest} className={c.btn}>add your restaurant</button>
 
 		</div>
 	</div>

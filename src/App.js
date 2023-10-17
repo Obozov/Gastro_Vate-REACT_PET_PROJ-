@@ -17,14 +17,14 @@ function App(props) {
 	return (
 		<BrowserRouter>
 			<div className="App">
-				<Header hotRestaurant={props.state.hotRestaurant} />
+				<Header hotRest={props.state.hotRest} />
 				<div className='app-wrapper-content'>
 					<Routes>
 						<Route path='/map' element={<Map />} />
-						<Route path='/list/*' element={<List restaurantsData={props.state.restaurantsData}  />} />
+						<Route path='/list/*' element={<List restsData={props.state.restsData}  />} />
 						<Route path='/about' element={<About />} />
 						<Route path='/revSup' element={<RevSup />} />
-						<Route path='/commerce' element={<Commerce />} />
+						<Route path='/commerce' element={<Commerce addRest={props.addRest} />} />
 					</Routes>
 				</div>
 				<Footer />

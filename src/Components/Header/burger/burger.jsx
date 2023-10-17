@@ -1,5 +1,5 @@
 import h from './burger.module.css'
-import {  NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 const Burger = () => {
@@ -24,7 +24,7 @@ const Burger = () => {
 			<div className={h.item} >
 				<NavLink className={({ isActive }) => isActive ? `${h.active_link}` : ''} to="/commerce">for commerce</NavLink>
 			</div>
-			
+
 		</div>
 	)
 }

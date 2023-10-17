@@ -5,7 +5,6 @@ import Hot from './hot/hot';
 const Header = (props) => {
 
 
-	
 	return (
 		<div className={h.header}>
 			<div className={h.header__row}>
@@ -14,7 +13,7 @@ const Header = (props) => {
 
 				</div>
 
-				<Hot hotRestaurant={props.hotRestaurant} />
+				<Hot hotRest={props.hotRest} />
 
 				<Burger />
 

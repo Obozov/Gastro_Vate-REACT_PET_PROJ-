@@ -5,19 +5,9 @@ import Restaurant from "./restaurant/restaurant";
 
 
 const List = (props) => {
-
-
-
-
-
-
-
-
-
-
 	return (
 		<main className="list" >
-			<Restaurant restaurantsData={props.restaurantsData} />
+			<Restaurant restsData={props.restsData} />
 		</main>
 	)
 }

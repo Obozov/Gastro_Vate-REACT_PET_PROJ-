@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom'
 
 
 const Hot = (props) => {
-	const path = "/list/" + props.hotRestaurant.id;
+	const path = "/list/" + props.hotRest.id;
 
 	return (
 		<div className={h.hotBlock}>

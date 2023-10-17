@@ -5,7 +5,7 @@ const Restaurant = (props) => {
 
 
 
-const RestaurantItem = (props) => {
+const RestItem = (props) => {
 	let path = '/list/' + props.id;
 	let status=props.status?"Open":"Close";
 	return <div className={c.restaurant}>
@@ -21,12 +21,12 @@ const RestaurantItem = (props) => {
 	</div>
 }
 
-let restaurantsElements = props.restaurantsData.map(r => <RestaurantItem status={r.status} time={r.time} name={r.name} id={r.id} />)
+let restsElements = props.restsData.map(r => <RestItem status={r.status} time={r.time} name={r.name} id={r.id} />)
 
 
 	return (
 		<div className="restaurant">
-			{restaurantsElements}
+			{restsElements}
 		</div>
 	)
 }
