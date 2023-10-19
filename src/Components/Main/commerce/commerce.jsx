@@ -9,7 +9,8 @@ const Commerce = (props) => {
 
 	let addRest = () => {
 		let text = newRestElement.current.value;
-		props.addRestaurant(text);
+		props.addRest(text);
+		newRestElement.current.value = '';
 	}
 
 	let onRestChange = () => {
@@ -21,10 +22,16 @@ const Commerce = (props) => {
 		<div className={c.addrestaurant}>
 
 			<p>Enter your name</p>
-			<textarea onChange={onRestChange} ref={newRestElement} value={props.newRestText} />
+			<textarea
+				onChange={onRestChange}
+				ref={newRestElement}
+				value={props.newRestText} />
 
 
-			<button onClick={addRest} className={c.btn}>add your restaurant</button>
+			<button
+				onClick={addRest}
+				className={c.btn}
+			>add your restaurant</button>
 
 		</div>
 	</div>

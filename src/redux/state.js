@@ -1,4 +1,5 @@
 // imitation backend
+import { rerenderEntireTree } from "../render";
 
 let state = {
 	restsData: [
@@ -23,6 +24,7 @@ export let addRest = (restName) => {
 	}
 
 	state.restsData.push(newRest);
+	rerenderEntireTree(state);
 }
 
 
