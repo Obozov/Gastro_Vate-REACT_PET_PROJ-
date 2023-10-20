@@ -21,10 +21,14 @@ function App(props) {
 				<div className='app-wrapper-content'>
 					<Routes>
 						<Route path='/map' element={<Map />} />
-						<Route path='/list/*' element={<List restsData={props.state.restsData}  />} />
+						<Route path='/list/*' element={<List restsData={props.state.restsData} />} />
 						<Route path='/about' element={<About />} />
 						<Route path='/revSup' element={<RevSup />} />
-						<Route path='/commerce' element={<Commerce addRest={props.addRest} />} />
+						<Route path='/commerce' element={<Commerce
+							newRestText={props.state.newRestText}
+							addRest={props.addRest}
+							updateNewRestText={props.updateNewRestText} 
+							/>} />
 					</Routes>
 				</div>
 				<Footer />

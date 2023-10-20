@@ -8,13 +8,12 @@ const Commerce = (props) => {
 	let newRestElement = React.createRef();
 
 	let addRest = () => {
-		let text = newRestElement.current.value;
-		props.addRest(text);
-		newRestElement.current.value = '';
-	}
+		props.addRest();
+ 	}
 
 	let onRestChange = () => {
-
+		let text=newRestElement.current.value;
+		props.updateNewRestText(text);
 	}
 
 	return <div className={c.commerce}>

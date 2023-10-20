@@ -1,4 +1,3 @@
-import c from "./list.module.css"
 import Restaurant from "./restaurant/restaurant";
 
 
