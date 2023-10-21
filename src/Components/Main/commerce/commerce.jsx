@@ -9,10 +9,12 @@ const Commerce = (props) => {
 
 	let addRest = () => {
 		props.addRest();
- 	}
+	}
+
+  
 
 	let onRestChange = () => {
-		let text=newRestElement.current.value;
+		let text = newRestElement.current.value;
 		props.updateNewRestText(text);
 	}
 

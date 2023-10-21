@@ -4,22 +4,26 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { subscribet, addRest, updateNewRestText } from './redux/state';
+import store from './redux/state';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 let rerenderEntireTree = (state) => {
 	root.render(
 		<React.StrictMode>
-			<App state={state} addRest={addRest} updateNewRestText={updateNewRestText} />
+			<App
+				state={state}
+				addRest={store.addRest.bind(store)}
+				updateNewRestText={store.updateNewRestText.bind(store)}
+			/>
 		</React.StrictMode>
 	);
 }
 
 
-rerenderEntireTree(state);
+rerenderEntireTree(store.getState());
 
-subscribet(rerenderEntireTree);
+store.subscribet(rerenderEntireTree);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
