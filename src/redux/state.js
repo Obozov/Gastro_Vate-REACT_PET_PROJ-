@@ -8,7 +8,24 @@ let store = {
 			{ id: 5, name: "Salva do Rali", status: true, time: 0, foto: "url" },
 		],
 		newRestText: 'it-c',
-		hotRest: { id: 1, name: "Clode Mone", status: false, time: 10, foto: "url" }
+		hotRest: { id: 1, name: "Clode Mone", status: false, time: 10, foto: "url" },
+		dispath(action) {
+			if (action.type === 'ADD-POST') {
+				let newRest = {
+					id: 6,
+					name: this._state.newRestText,
+					status: false,
+					time: 5,
+					foto: "url"
+				}
+				this._state.restsData.push(newRest);
+				this._state.newRestText = '';
+				this._callSubscriber(this._state);
+			} else if (action.type === 'UPDATE-NEW-REST-TEXT') {
+				this._state.newRestText = action.newText;
+				this._callSubscriber(this._state);
+			}
+		}
 
 	},
 	getState() {
@@ -21,7 +38,7 @@ let store = {
 	addRest() {
 		let newRest = {
 			id: 6,
-			name: this._state.newRestText, 
+			name: this._state.newRestText,
 			status: false,
 			time: 5,
 			foto: "url"

@@ -6,6 +6,7 @@ import './index.css';
 import App from './App';
 import store from './redux/state';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 let rerenderEntireTree = (state) => {
@@ -13,8 +14,7 @@ let rerenderEntireTree = (state) => {
 		<React.StrictMode>
 			<App
 				state={state}
-				addRest={store.addRest.bind(store)}
-				updateNewRestText={store.updateNewRestText.bind(store)}
+				dispatch={store.dispatch.bind(store)}
 			/>
 		</React.StrictMode>
 	);

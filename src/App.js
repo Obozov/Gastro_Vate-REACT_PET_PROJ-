@@ -26,8 +26,7 @@ function App(props) {
 						<Route path='/revSup' element={<RevSup />} />
 						<Route path='/commerce' element={<Commerce
 							newRestText={props.state.newRestText}
-							addRest={props.addRest}
-							updateNewRestText={props.updateNewRestText} 
+							dispatch={props.dispatch}
 							/>} />
 					</Routes>
 				</div>

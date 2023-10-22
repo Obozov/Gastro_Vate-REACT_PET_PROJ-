@@ -8,14 +8,14 @@ const Commerce = (props) => {
 	let newRestElement = React.createRef();
 
 	let addRest = () => {
-		props.addRest();
+		props.dispatch({ type: 'ADD-POST' });
 	}
 
-  
+
 
 	let onRestChange = () => {
 		let text = newRestElement.current.value;
-		props.updateNewRestText(text);
+		props.dispatch({ type: 'UPDATE-NEW-REST-TEXT', newText: text  });
 	}
 
 	return <div className={c.commerce}>
