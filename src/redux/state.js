@@ -1,3 +1,6 @@
+const ADD_REST = 'ADD-REST';
+const UPDATE_NEW_REST_TEXT = 'UPDATE-NEW-REST-TEXT';
+
 let store = {
 	_state: {
 		restsData: [
@@ -9,24 +12,23 @@ let store = {
 		],
 		newRestText: 'it-c',
 		hotRest: { id: 1, name: "Clode Mone", status: false, time: 10, foto: "url" },
-		dispath(action) {
-			if (action.type === 'ADD-POST') {
-				let newRest = {
-					id: 6,
-					name: this._state.newRestText,
-					status: false,
-					time: 5,
-					foto: "url"
-				}
-				this._state.restsData.push(newRest);
-				this._state.newRestText = '';
-				this._callSubscriber(this._state);
-			} else if (action.type === 'UPDATE-NEW-REST-TEXT') {
-				this._state.newRestText = action.newText;
-				this._callSubscriber(this._state);
+	},
+	dispatch(action) {
+		if (action.type === 'ADD-REST') {
+			let newRest = {
+				id: 6,
+				name: this._state.newRestText,
+				status: false,
+				time: 5,
+				foto: "url"
 			}
+			this._state.restsData.push(newRest);
+			this._state.newRestText = '';
+			this._callSubscriber(this._state);
+		} else if (action.type === 'UPDATE-NEW-REST-TEXT') {
+			this._state.newRestText = action.newText;
+			this._callSubscriber(this._state);
 		}
-
 	},
 	getState() {
 		return this._state;
@@ -53,10 +55,14 @@ let store = {
 		this._callSubscriber(this._state);
 
 	},
-	subscribet(observer) {
+	subscribe(observer) {
 		this._callSubscriber = observer;
 	}
 }
+export const addRestActionCreator = () => ({ type: ADD_REST })
+
+export const updateNewRestTextActionCreator = (text) => 
+({ type: UPDATE_NEW_REST_TEXT, newText: text })
 
 
 

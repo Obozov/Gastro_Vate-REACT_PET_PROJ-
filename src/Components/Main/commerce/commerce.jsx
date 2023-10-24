@@ -1,6 +1,6 @@
 import React from 'react';
 import c from './commerce.module.css'
-
+import { addRestActionCreator, updateNewRestTextActionCreator } from '../../../redux/state';
 
 
 const Commerce = (props) => {
@@ -8,14 +8,14 @@ const Commerce = (props) => {
 	let newRestElement = React.createRef();
 
 	let addRest = () => {
-		props.dispatch({ type: 'ADD-POST' });
+		props.dispatch(addRestActionCreator());
 	}
-
-
 
 	let onRestChange = () => {
 		let text = newRestElement.current.value;
-		props.dispatch({ type: 'UPDATE-NEW-REST-TEXT', newText: text  });
+		let action = updateNewRestTextActionCreator(text);
+		props.dispatch(action);
+
 	}
 
 	return <div className={c.commerce}>
