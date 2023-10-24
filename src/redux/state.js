@@ -10,6 +10,13 @@ let store = {
 			{ id: 4, name: "FriluaRes", status: false, time: 50, foto: "url" },
 			{ id: 5, name: "Salva do Rali", status: true, time: 0, foto: "url" },
 		],
+		reviewData: [
+			{ id: 1, userId: 1, text: "Cool" },
+			{ id: 2, userId: 2, text: "GOOOD!" },
+			{ id: 3, userId: 3, text: "Not bad" },
+			{ id: 4, userId: 4, text: "Tasty" },
+			{ id: 5, userId: 5, text: "Too expensive" },
+		],
 		newRestText: 'it-c',
 		hotRest: { id: 1, name: "Clode Mone", status: false, time: 10, foto: "url" },
 	},
@@ -61,8 +68,8 @@ let store = {
 }
 export const addRestActionCreator = () => ({ type: ADD_REST })
 
-export const updateNewRestTextActionCreator = (text) => 
-({ type: UPDATE_NEW_REST_TEXT, newText: text })
+export const updateNewRestTextActionCreator = (text) =>
+	({ type: UPDATE_NEW_REST_TEXT, newText: text })
 
 
 

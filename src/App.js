@@ -20,10 +20,11 @@ function App(props) {
 				<Header hotRest={props.state.hotRest} />
 				<div className='app-wrapper-content'>
 					<Routes>
+						
 						<Route path='/map' element={<Map />} />
-						<Route path='/list/*' element={<List restsData={props.state.restsData} />} />
+						<Route path='/list/*' element={<List  restsData={props.state.restsData} />} />
 						<Route path='/about' element={<About />} />
-						<Route path='/revSup' element={<RevSup />} />
+						<Route path='/revSup' element={<RevSup reviewData={props.state.reviewData} />} />
 						<Route path='/commerce' element={<Commerce
 							newRestText={props.state.newRestText}
 							dispatch={props.dispatch}
@@ -33,6 +34,7 @@ function App(props) {
 				<Footer />
 			</div>
 		</BrowserRouter>
+		
 	);
 
 }

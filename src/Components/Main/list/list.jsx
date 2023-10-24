@@ -4,9 +4,10 @@ import Restaurant from "./restaurant/restaurant";
 
 
 const List = (props) => {
+
 	return (
 		<main className="list" >
-			<Restaurant restsData={props.restsData} />
+			<Restaurant reviewData={props.reviewData} restsData={props.restsData} />
 		</main>
 	)
 }

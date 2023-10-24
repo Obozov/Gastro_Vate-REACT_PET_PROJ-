@@ -19,7 +19,7 @@ const Burger = () => {
 				<NavLink className={({ isActive }) => isActive ? `${h.active_link}` : ''} to="/about">about us</NavLink>
 			</div>
 			<div className={h.item} >
-				<NavLink className={({ isActive }) => isActive ? `${h.active_link}` : ''} to="/revSup">rate and support us!</NavLink>
+				<NavLink className={({ isActive }) => isActive ? `${h.active_link}` : ''} to="/revSup">reviews</NavLink>
 			</div>
 			<div className={h.item} >
 				<NavLink className={({ isActive }) => isActive ? `${h.active_link}` : ''} to="/commerce">for commerce</NavLink>
