@@ -1,22 +1,18 @@
+.list__row{
+	display: flex;
+}
 .restaurant{
 	color: black;
 	font-size: 30px;
 	border: 1px black solid;
+	width: 1090px;
+	padding-bottom: 10px;
 }
 .name{
 	font-weight: bold;
 	font-size: 30px;
 }
-.rateBtn{
-	width: 200px;
-	height: 50px;
-	background: #2aa6be;
-	font-size: 30px;
-}
-.rateBtn:hover{
-	cursor: pointer;
-	background: #55cddb;
-}
-.rateBtn:active{
-	background: #bbe4e9;
+
+.review{
+	padding-top: 30px;
 }

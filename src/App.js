@@ -22,9 +22,9 @@ function App(props) {
 					<Routes>
 						
 						<Route path='/map' element={<Map />} />
-						<Route path='/list/*' element={<List  restsData={props.state.restsData} />} />
+						<Route path='/list/*' element={<List reviewData={props.state.reviewData} restsData={props.state.restsData} />} />
 						<Route path='/about' element={<About />} />
-						<Route path='/revSup' element={<RevSup reviewData={props.state.reviewData} />} />
+						<Route path='/revSup' element={<RevSup  />} />
 						<Route path='/commerce' element={<Commerce
 							newRestText={props.state.newRestText}
 							dispatch={props.dispatch}
