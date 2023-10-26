@@ -17,24 +17,24 @@ function App(props) {
 	return (
 		<BrowserRouter>
 			<div className="App">
-				<Header hotRest={props.state.hotRest} />
+				<Header hotRest={props.state.restsState.hotRest} />
 				<div className='app-wrapper-content'>
 					<Routes>
-						
+
 						<Route path='/map' element={<Map />} />
-						<Route path='/list/*' element={<List reviewData={props.state.reviewData} restsData={props.state.restsData} />} />
+						<Route path='/list/*' element={<List store={props.store} />} />
 						<Route path='/about' element={<About />} />
-						<Route path='/revSup' element={<RevSup  />} />
+						<Route path='/revSup' element={<RevSup />} />
 						<Route path='/commerce' element={<Commerce
-							newRestText={props.state.newRestText}
+							newRestText={props.state.restsState.newRestText}
 							dispatch={props.dispatch}
-							/>} />
+						/>} />
 					</Routes>
 				</div>
 				<Footer />
 			</div>
 		</BrowserRouter>
-		
+
 	);
 
 }

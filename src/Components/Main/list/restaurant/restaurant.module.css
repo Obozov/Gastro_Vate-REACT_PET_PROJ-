@@ -2,6 +2,7 @@
 	display: flex;
 }
 .restaurant{
+	position: relative;
 	color: black;
 	font-size: 30px;
 	border: 1px black solid;
@@ -15,4 +16,11 @@
 
 .review{
 	padding-top: 30px;
+}
+.send_review{
+	right: 0;
+	bottom: 0;
+	position: absolute;
+
+
 }

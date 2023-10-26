@@ -1,7 +1,7 @@
 import React from 'react';
 import c from './commerce.module.css'
-import { addRestActionCreator, updateNewRestTextActionCreator } from '../../../redux/state';
-
+import { addRestActionCreator } from '../../../redux/rests-reducer';
+import { updateNewRestTextActionCreator } from '../../../redux/rests-reducer';
 
 const Commerce = (props) => {
 
@@ -12,6 +12,7 @@ const Commerce = (props) => {
 	}
 
 	let onRestChange = () => {
+
 		let text = newRestElement.current.value;
 		let action = updateNewRestTextActionCreator(text);
 		props.dispatch(action);
