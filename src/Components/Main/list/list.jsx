@@ -1,13 +1,13 @@
-import Restaurant from "./restaurant/restaurant";
 
-
+import Restauraunt from './restaurant/restaurant'
+import RestaurantContainer from './restaurant/restaurantContainer';
 
 
 const List = (props) => {
 
 	return (
 		<main className="list" >
-			<Restaurant store={props.store} />
+			<RestaurantContainer store={props.store} />
 		</main>
 	)
 }

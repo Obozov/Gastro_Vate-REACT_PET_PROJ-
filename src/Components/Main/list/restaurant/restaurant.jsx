@@ -1,30 +1,16 @@
-import { updateNewReviewBodyCreator } from '../../../../redux/review-reducer';
-import { SendReviewCreator } from '../../../../redux/review-reducer';
 import c from './restaurant.module.css'
 import { NavLink } from 'react-router-dom'
 
 
 //dialogs
 const Restaurant = (props) => {
-
 	
-	let state = props.store.getState();
-	let newReviewBody = state.reviewState.newReviewBody;
+	let newReviewBody = props.state.reviewState.newReviewBody;
 
 	const RestItem = (props) => {
 
 		let path = '/list/' + props.id;
 		let status = props.status ? "Open" : "Close";
-
-		let onSendReviewClick = () => {
-			props.store.dispatch(SendReviewCreator());
-		}
-		let onNewReviewChange = (e) => {
-			
-			let body = e.target.value;
-			props.store.dispatch(updateNewReviewBodyCreator(body));
-		}
-
 
 
 		return <div className={c.restaurant}>
@@ -40,8 +26,8 @@ const Restaurant = (props) => {
 
 
 			<div className={c.send_review}>
-				<div ><textarea onChange={onNewReviewChange} value={newReviewBody} placeholder='Enter ur review'></textarea></div>
-				<div><button onClick={onSendReviewClick}>Send</button></div>
+				<div ><textarea onChange={props.onNewReviewChange} value={newReviewBody} placeholder='Enter ur review'></textarea></div>
+				<div><button onClick={props.onSendReviewClick}>Send</button></div>
 			</div>
 
 		</div>
@@ -59,8 +45,8 @@ const Restaurant = (props) => {
 
 
 
-	let restsElements = state.restsState.restsData.map(r => <RestItem store={props.store} state={props.state} status={r.status} time={r.time} name={r.name} id={r.id} />)
-	let reviewsElements = state.reviewState.reviewData.map(r => <ReviewItem  userName={r.userName} userId={r.userId} id={r.id} text={r.text} />)
+	let restsElements = props.state.restsState.restsData.map(r => <RestItem onNewReviewChange={props.onNewReviewChange} onSendReviewClick={props.onSendReviewClick}  state={props.state} status={r.status} time={r.time} name={r.name} id={r.id} />)
+	let reviewsElements = props.state.reviewState.reviewData.map(r => <ReviewItem  userName={r.userName} userId={r.userId} id={r.id} text={r.text} />)
 
 	return (
 		<div className={c.list}>
