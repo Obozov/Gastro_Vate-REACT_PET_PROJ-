@@ -1,5 +1,4 @@
 
-import Restauraunt from './restaurant/restaurant'
 import RestaurantContainer from './restaurant/restaurantContainer';
 
 
