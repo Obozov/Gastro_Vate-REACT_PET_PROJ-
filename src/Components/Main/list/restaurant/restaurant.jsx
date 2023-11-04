@@ -3,6 +3,8 @@ import { SendReviewCreator } from '../../../../redux/review-reducer';
 import c from './restaurant.module.css'
 import { NavLink } from 'react-router-dom'
 
+
+//dialogs
 const Restaurant = (props) => {
 
 	

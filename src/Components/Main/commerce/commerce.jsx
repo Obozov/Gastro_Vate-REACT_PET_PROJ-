@@ -7,15 +7,16 @@ const Commerce = (props) => {
 
 	let newRestElement = React.createRef();
 
-	let addRest = () => {
-		props.dispatch(addRestActionCreator());
+	let onAddRest = () => {
+		props.addRest();
+		// props.dispatch(addRestActionCreator());
 	}
 
 	let onRestChange = () => {
-
 		let text = newRestElement.current.value;
-		let action = updateNewRestTextActionCreator(text);
-		props.dispatch(action);
+		props.updateNewRestText(text);
+		// let action = updateNewRestTextActionCreator(text);
+		// props.dispatch(action);
 
 	}
 
@@ -31,7 +32,7 @@ const Commerce = (props) => {
 
 
 			<button
-				onClick={addRest}
+				onClick={onAddRest}
 				className={c.btn}
 			>add your restaurant</button>
 

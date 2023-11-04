@@ -9,6 +9,7 @@ import Commerce from './Components/Main/commerce/commerce';
 
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import CommerceContainer from './Components/Main/commerce/commerceContainer';
 
 function App(props) {
 
@@ -22,13 +23,10 @@ function App(props) {
 					<Routes>
 
 						<Route path='/map' element={<Map />} />
-						<Route path='/list/*' element={<List store={props.store} />} />
+						<Route path='/list/*' element={<List store={props.store} />} /> {/*dialogs */}
 						<Route path='/about' element={<About />} />
 						<Route path='/revSup' element={<RevSup />} />
-						<Route path='/commerce' element={<Commerce
-							newRestText={props.state.restsState.newRestText}
-							dispatch={props.dispatch}
-						/>} />
+						<Route path='/commerce' element={<CommerceContainer store={props.store} />} /> {/*profile */}
 					</Routes>
 				</div>
 				<Footer />
