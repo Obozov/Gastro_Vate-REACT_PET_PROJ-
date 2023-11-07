@@ -13,7 +13,7 @@ const Header = (props) => {
 
 				</div>
 
-				<Hot hotRest={props.hotRest} />
+				{/* <Hot hotRest={props.hotRest} /> */}
 
 				<Burger />
 

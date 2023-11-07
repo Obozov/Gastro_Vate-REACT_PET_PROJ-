@@ -1,8 +1,18 @@
 const UPDATE_NEW_REVIEW_BODY = 'UPDATE-NEW-REVIEW-BODY';
 const SEND_REVIEW = 'SEND-REVIEW';
 
+let initialState = {
+	reviewData: [
+		{ id: 1, userId: 1, userName: "John", text: "Cool" },
+		{ id: 2, userId: 2, userName: "Wiktoria", text: "GOOOD!" },
+		{ id: 3, userId: 3, userName: "Lau", text: "Not bad" },
+		{ id: 4, userId: 4, userName: "Grzegorz", text: "Tasty" },
+		{ id: 5, userId: 5, userName: "Sasha", text: "Too expensive" },
+	],
+	newReviewBody: "",
+}
 
-const reviewReducer = (state, action) => {
+const reviewReducer = (state = initialState, action) => {
 
 	switch (action.type) {
 		case UPDATE_NEW_REVIEW_BODY:

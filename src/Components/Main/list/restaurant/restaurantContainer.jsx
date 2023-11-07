@@ -1,27 +1,48 @@
+import { connect } from 'react-redux';
 import { SendReviewCreator, updateNewReviewBodyCreator } from '../../../../redux/review-reducer';
 import Restaurant from './restaurant';
 
 //dialogs
-const RestaurantContainer = (props) => { // в пропасах стор!
+// const RestaurantContainer = (props) => { // в пропасах стор!
 
 
-	let state = props.store.getState();
+// 	return <StoreContext.Consumer>{
+// 		(store) => {
+// 			let state = store.getState();
 
-	let onSendReviewClick = () => {
-		props.store.dispatch(SendReviewCreator());
+// 			let onSendReviewClick = () => {
+// 				store.dispatch(SendReviewCreator());
+// 			}
+
+// 			let onNewReviewChange = (e) => {
+
+// 				let body = e.target.value;
+// 				store.dispatch(updateNewReviewBodyCreator(body));
+// 			}
+// 			return <Restaurant state={state} onNewReviewChange={onNewReviewChange} onSendReviewClick={onSendReviewClick} />
+// 		}}
+
+// 	</StoreContext.Consumer>
+// }
+
+let mapStateToProps = (state) => {
+	return {
+		state: state
 	}
-
-	let onNewReviewChange = (e) => {
-			
-		let body = e.target.value;
-		props.store.dispatch(updateNewReviewBodyCreator(body));
-	}
-
-
-	
-	return <Restaurant state={state} onNewReviewChange={onNewReviewChange} onSendReviewClick={onSendReviewClick} />
 }
 
 
+let mapDispatchToProps = (dispatch) => {
+
+	return {
+		onNewReviewChange: () => {
+			dispatch(SendReviewCreator());
+		},
+		onSendReviewClick: (body) => {
+			dispatch(updateNewReviewBodyCreator(body));
+		}
+	}
+}
+const RestaurantContainer = connect(mapStateToProps, mapDispatchToProps)(Restaurant);
 
 export default RestaurantContainer;

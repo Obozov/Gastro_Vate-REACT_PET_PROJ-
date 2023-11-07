@@ -6,7 +6,7 @@ const List = (props) => {
 
 	return (
 		<main className="list" >
-			<RestaurantContainer store={props.store} />
+			<RestaurantContainer /> {/*store={props.store} */}
 		</main>
 	)
 }

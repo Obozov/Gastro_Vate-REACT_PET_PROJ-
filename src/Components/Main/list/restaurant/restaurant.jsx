@@ -44,7 +44,6 @@ const Restaurant = (props) => {
 	}
 
 
-
 	let restsElements = props.state.restsState.restsData.map(r => <RestItem onNewReviewChange={props.onNewReviewChange} onSendReviewClick={props.onSendReviewClick}  state={props.state} status={r.status} time={r.time} name={r.name} id={r.id} />)
 	let reviewsElements = props.state.reviewState.reviewData.map(r => <ReviewItem  userName={r.userName} userId={r.userId} id={r.id} text={r.text} />)
 
