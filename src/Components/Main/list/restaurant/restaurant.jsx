@@ -4,8 +4,10 @@ import { NavLink } from 'react-router-dom'
 
 //dialogs
 const Restaurant = (props) => {
-	
+
 	let newReviewBody = props.state.reviewState.newReviewBody;
+
+	
 
 	const RestItem = (props) => {
 
@@ -26,7 +28,7 @@ const Restaurant = (props) => {
 
 
 			<div className={c.send_review}>
-				<div ><textarea onChange={props.onNewReviewChange} value={newReviewBody} placeholder='Enter ur review'></textarea></div>
+				<div><textarea onChange={props.onNewReviewChange} value={newReviewBody} placeholder='Enter ur review'></textarea></div>
 				<div><button onClick={props.onSendReviewClick}>Send</button></div>
 			</div>
 
@@ -44,17 +46,15 @@ const Restaurant = (props) => {
 	}
 
 
-	let restsElements = props.state.restsState.restsData.map(r => <RestItem onNewReviewChange={props.onNewReviewChange} onSendReviewClick={props.onSendReviewClick}  state={props.state} status={r.status} time={r.time} name={r.name} id={r.id} />)
-	let reviewsElements = props.state.reviewState.reviewData.map(r => <ReviewItem  userName={r.userName} userId={r.userId} id={r.id} text={r.text} />)
+	let restsElements = props.state.restsState.restsData.map(r => <RestItem key={r.id} onNewReviewChange={props.onNewReviewChange} onSendReviewClick={props.onSendReviewClick} state={props.state} status={r.status} time={r.time} name={r.name} id={r.id} />)
+	let reviewsElements = props.state.reviewState.reviewData.map(r => <ReviewItem key={r.id} userName={r.userName} userId={r.userId} id={r.id} text={r.text} />)
+
 
 	return (
 		<div className={c.list}>
 			<div className={c.list__row}>
 				<div className={c.rest_list}>
 					<div>{restsElements}</div>
-					<div>
-
-					</div>
 				</div>
 				<div className={c.review_list}>
 					{reviewsElements}

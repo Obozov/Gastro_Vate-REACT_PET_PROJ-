@@ -8,6 +8,7 @@ import RevSup from './Components/Main/rev/reviews';
 import CommerceContainer from './Components/Main/commerce/commerceContainer';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import UsersContainer from './Components/Main/users/UsersContainer';
 
 function App(props) {
 
@@ -24,6 +25,7 @@ function App(props) {
 						<Route path='/map' element={<Map />} />
 						<Route path='/list/*' element={<List />} /> {/*dialogs  store={props.store}*/}
 						<Route path='/about' element={<About />} />
+						<Route path='/users' element={<UsersContainer />} />
 						<Route path='/revSup' element={<RevSup />} />
 						<Route path='/commerce' element={<CommerceContainer />} /> {/*profile   store={props.store}*/}
 					</Routes>

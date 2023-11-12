@@ -35,10 +35,10 @@ let mapStateToProps = (state) => {
 let mapDispatchToProps = (dispatch) => {
 
 	return {
-		onNewReviewChange: () => {
+		onSendReviewClick: () => {
 			dispatch(SendReviewCreator());
 		},
-		onSendReviewClick: (body) => {
+		onNewReviewChange: (body) => {
 			dispatch(updateNewReviewBodyCreator(body));
 		}
 	}
@@ -46,3 +46,5 @@ let mapDispatchToProps = (dispatch) => {
 const RestaurantContainer = connect(mapStateToProps, mapDispatchToProps)(Restaurant);
 
 export default RestaurantContainer;
+
+

@@ -1,7 +1,5 @@
 import React from 'react';
 import c from './commerce.module.css'
-import { addRestActionCreator } from '../../../redux/rests-reducer';
-import { updateNewRestTextActionCreator } from '../../../redux/rests-reducer';
 
 const Commerce = (props) => {
 
@@ -11,10 +9,10 @@ const Commerce = (props) => {
 		props.addRest();
 		// props.dispatch(addRestActionCreator());
 	}
-
 	let onRestChange = () => {
+
 		let text = newRestElement.current.value;
-		props.updateNewRestText(text);
+		props.onRestChange(text);   //Тут может быть был странный рефакторинг, поменял имя
 		// let action = updateNewRestTextActionCreator(text);
 		// props.dispatch(action);
 

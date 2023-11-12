@@ -15,7 +15,7 @@ let initialState = {
 
 const restReducer = (state = initialState, action) => {
 	switch (action.type) {
-		case ADD_REST:
+		case ADD_REST: {
 			let newRest = {
 				id: 6,
 				name: state.newRestText,
@@ -23,13 +23,22 @@ const restReducer = (state = initialState, action) => {
 				time: 5,
 				foto: "url"
 			}
-			state.restsData.push(newRest);
-			state.newRestText = '';
+			return {
+				...state,
+				restsData: [...state.restsData, newRest],
+				newRestText: ''
+			};
 
-			return state;
-		case UPDATE_NEW_REST_TEXT:
-			state.newRestText = action.newText;
-			return state;
+
+		}
+		case UPDATE_NEW_REST_TEXT: {
+			return {
+				...state,
+				newRestText: action.newText
+			};
+
+
+		}
 		default:
 			return state;
 	}
