@@ -1,4 +1,3 @@
-import React from 'react';
 import { addRestActionCreator } from '../../../redux/rests-reducer';
 import { updateNewRestTextActionCreator } from '../../../redux/rests-reducer';
 import Commerce from './commerce';
