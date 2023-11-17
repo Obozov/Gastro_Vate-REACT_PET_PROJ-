@@ -2,3 +2,11 @@
 	width: 200px;
 	border-radius: 100px;
 }
+.selectedPage{
+	font-weight: bold;
+	font-size: 20;
+	cursor: default;
+}
+.page{
+	cursor: pointer;
+}
