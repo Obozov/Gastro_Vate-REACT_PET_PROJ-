@@ -9,7 +9,7 @@ let initialState = {
 		{ id: 4, name: "FriluaRes", status: false, time: 50, foto: "url" },
 		{ id: 5, name: "Salva do Rali", status: true, time: 0, foto: "url" },
 	],
-	newRestText: 'it-c',
+	newRestText: '',
 	hotRest: { id: 1, name: "Clode Mone", status: false, time: 10, foto: "url" },
 }
 

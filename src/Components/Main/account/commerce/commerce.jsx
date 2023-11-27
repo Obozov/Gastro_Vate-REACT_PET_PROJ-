@@ -1,5 +1,5 @@
 import React from 'react';
-import c from './commerce.module.css'
+import c from '../account.module.css'
 
 const Commerce = (props) => {
 
@@ -26,8 +26,9 @@ const Commerce = (props) => {
 			<textarea
 				onChange={onRestChange}
 				ref={newRestElement}
-				value={props.newRestText} />
-
+				value={props.newRestText}
+				placeholder='Restaurant Name'
+				/>
 
 			<button
 				onClick={onAddRest}
@@ -41,3 +42,5 @@ const Commerce = (props) => {
 
 
 export default Commerce;
+
+

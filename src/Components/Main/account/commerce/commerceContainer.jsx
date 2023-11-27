@@ -1,7 +1,6 @@
-import { addRestActionCreator } from '../../../redux/rests-reducer';
-import { updateNewRestTextActionCreator } from '../../../redux/rests-reducer';
-import Commerce from './commerce';
+import { addRestActionCreator, updateNewRestTextActionCreator } from '../../../../redux/rests-reducer';
 import { connect } from 'react-redux';
+import Commerce from './commerce';
 
 // const CommerceContainer = (props) => {
 

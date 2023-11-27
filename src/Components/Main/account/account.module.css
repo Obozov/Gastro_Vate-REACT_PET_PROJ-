@@ -1,0 +1,23 @@
+.wrap{
+	height: 1000px;
+	background: #aaaaaa8e;
+}
+
+.mainBlock{
+	padding-bottom: 200px;
+	border: #aaaaaa8e solid;
+	max-width: 800px;
+}
+.commerce{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: #0c75a5;
+}
+.btn{
+	padding: 10px;
+	font-size: 15px;
+	background: #ffffff;
+	border-radius: 10px;
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
