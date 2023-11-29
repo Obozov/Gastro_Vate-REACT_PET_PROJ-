@@ -8,7 +8,7 @@ const Account = () => {
 	return <>
 		<div className={styles.wrap}>
 			<ProfileContainer />
-			<CommerceContainer />
+			<CommerceContainer />  {/* profile */}
 		</div>
 
 	</>

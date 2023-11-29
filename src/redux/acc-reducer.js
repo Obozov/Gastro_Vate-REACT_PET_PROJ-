@@ -1,5 +1,7 @@
 const ADD_REST = 'ADD-REST';
 const UPDATE_NEW_REST_TEXT = 'UPDATE-NEW-REST-TEXT';
+const SET_USER_PROFILE = 'SET_USER_PROFILE';
+
 
 let initialState = {
 	restsData: [
@@ -11,9 +13,10 @@ let initialState = {
 	],
 	newRestText: '',
 	hotRest: { id: 1, name: "Clode Mone", status: false, time: 10, foto: "url" },
+	profile: null,
 }
 
-const restReducer = (state = initialState, action) => {
+const accReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case ADD_REST: {
 			let newRest = {
@@ -36,8 +39,12 @@ const restReducer = (state = initialState, action) => {
 				...state,
 				newRestText: action.newText
 			};
-
-
+		}
+		case SET_USER_PROFILE: {
+			return {
+				...state,
+				profile: action.profile
+			};
 		}
 		default:
 			return state;
@@ -46,8 +53,8 @@ const restReducer = (state = initialState, action) => {
 
 }
 export const addRestActionCreator = () => ({ type: ADD_REST })
-
+export const setUserProfile = (profile) => ({ type: SET_USER_PROFILE, profile })
 export const updateNewRestTextActionCreator = (text) =>
 	({ type: UPDATE_NEW_REST_TEXT, newText: text })
 
-export default restReducer;
+export default accReducer;

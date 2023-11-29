@@ -3,7 +3,7 @@ import { follow, setCurrentPage, setUsers, setTotalUsersCount, toggleIsFetching,
 import axios from "axios"
 import React from "react";
 import Users from "./Users";
-import preloader from "../../../assets/images/preloader.svg"
+import Preloader from "../../common/Preloader/Preloader";
 
 class UsersContainer extends React.Component {
 
@@ -21,8 +21,6 @@ class UsersContainer extends React.Component {
 
 	onPageChanged = (pageNubmer) => {
 		this.props.toggleIsFetching(true);
-
-
 		this.props.setCurrentPage(pageNubmer)
 		axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNubmer}&count=${this.props.pageSize}`)
 			.then(response => {
@@ -36,8 +34,7 @@ class UsersContainer extends React.Component {
 	render() {
 
 		return <>
-			{this.props.isFetching ? <img src={preloader} /> : null/*ВЫНЕСТИ В ДРУГОЙ ФАЙЛ */}
-
+			{this.props.isFetching ? <Preloader /> : null}
 			<Users
 				totalUsersCount={this.props.totalUsersCount}
 				pageSize={this.props.pageSize}
@@ -52,13 +49,6 @@ class UsersContainer extends React.Component {
 	}
 }
 
-function strF(p1, p2, p3, p4) {
-	let res = toString(p2 + p1 + p3 + p1 + p4);
-	console.log(res);
-	debugger;
-	return res
-}
-strF('*', '1', 'b', '1c');
 
 let mapStateToProps = (state) => {
 	return {

@@ -4,9 +4,7 @@
 }
 
 .mainBlock{
-	padding-bottom: 200px;
-	border: #aaaaaa8e solid;
-	max-width: 800px;
+	
 }
 .commerce{
 	display: flex;
@@ -20,4 +18,30 @@
 	background: #ffffff;
 	border-radius: 10px;
 	font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.profile{
+	padding-bottom: 50px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+.mainBlock{
+	width: 1000px;
+}
+.jobBlock{
+	width: 1000px;
+	text-align: center;
+}
+.contacts{
+	display: flex;
+	justify-content: space-between;
+	width: 500px;
+	background: #ffffff;
+	padding: 15px;
+	border-radius: 10px;
+	
+}
+.link:hover{
+	cursor: pointer;
+	color: #0c75a5;
 }

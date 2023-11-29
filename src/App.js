@@ -24,7 +24,9 @@ function App(props) {
 						<Route path='/list/*' element={<List />} /> {/*dialogs  store={props.store}*/}
 						<Route path='/about' element={<About />} />
 						<Route path='/users' element={<UsersContainer />} />
-						<Route path='/acc' element={<AccountContainer />} /> {/*profile   store={props.store}*/}
+						<Route path='/acc/:userId?' element={<AccountContainer />} /> {/*profile   store={props.store}*/}
+						<Route path='/acc/' element={<AccountContainer />} /> {/*profile   store={props.store}*/}
+
 					</Routes>
 				</div>
 				<Footer />
